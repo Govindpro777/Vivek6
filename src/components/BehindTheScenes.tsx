@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Users, Trophy, CalendarDays, Zap } from "lucide-react";
 import behindImg from "@/assets/behind_the_scene.jpg";
-import capsuleImg from "@/assets/capsule.jpg";
-import eagalImg from "@/assets/eagal.jpg";
-import moneyImg from "@/assets/money.jpg";
+import capsuleImg from "@/assets/capsule.png";
+import eagalImg from "@/assets/eagal.png";
+import moneyImg from "@/assets/money.png";
 import community1Img from "@/assets/community1.jpg";
 import community2Img from "@/assets/community2.jpg";
 

@@ -1,17 +1,25 @@
-
 import { motion } from "framer-motion";
-import eagalImg from "@/assets/eagal.jpg";
-import xImg from "@/assets/x.jpg";
-import moneyImg from "@/assets/money.jpg";
-import telegramImg from "@/assets/telegram.jpg";
-import capsuleImg from "@/assets/capsule.jpg";
+import { Send, Music2, Instagram } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+import eagalImg from "@/assets/eagal.png";
+import xImg from "@/assets/x.png";
+import moneyImg from "@/assets/money.png";
+import telegramImg from "@/assets/telegram.png";
+import capsuleImg from "@/assets/capsule.png";
+
+const socialLinks = [
+  { icon: FaXTwitter, href: "#", label: "X" },
+  { icon: Send,       href: "#", label: "Telegram" },
+  { icon: Music2,     href: "#", label: "TikTok" },
+  { icon: Instagram,  href: "#", label: "Instagram" },
+];
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-24 pb-10 sm:pb-16 lg:pt-28">
       <div className="container mx-auto px-4 relative z-10 flex flex-col gap-10">
 
-        {/* Top: text + button */}
+        {/* Text + button + social */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           <div className="space-y-6 text-center lg:text-left">
             <motion.h1
@@ -47,33 +55,52 @@ const HeroSection = () => {
                 BUY $GALLOP
               </motion.a>
             </motion.div>
+
+            {/* Social icons */}
+            <motion.div
+              className="flex gap-3 sm:gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted/50 flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.7 + index * 0.1 }}
+                >
+                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                </motion.a>
+              ))}
+            </motion.div>
           </div>
         </div>
 
         {/* Full-width image row — all 5 images, equal gaps */}
-        <motion.div
+        {/* <motion.div
           className="w-full flex items-center justify-between gap-4"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
         >
-          {[
-            { src: eagalImg,    cover: true  },
-            { src: xImg,        cover: true  },
-            { src: moneyImg,    cover: false },
-            { src: telegramImg, cover: false },
-            { src: capsuleImg,  cover: false },
-          ].map((img, i) => (
+          {[eagalImg, xImg, moneyImg, telegramImg, capsuleImg].map((src, i) => (
             <motion.img
               key={i}
-              src={img.src}
+              src={src}
               alt=""
-              className={`flex-1 h-24 sm:h-32 md:h-40 w-0 min-w-0 rounded-2xl border border-border/40 hover:border-secondary transition-colors ${img.cover ? "object-cover" : "object-contain"}`}
+              className="flex-1 h-14 sm:h-16 md:h-20 w-0 min-w-0 rounded-xl object-contain"
               whileHover={{ scale: 1.07 }}
               whileTap={{ scale: 0.95 }}
             />
           ))}
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

@@ -2,17 +2,17 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
-  { name: "GALLERY",            href: "/#gallery",            external: false },
+  // { name: "GALLERY",            href: "/#gallery",            external: false },
   { name: "HOW TO BUY",         href: "/#how-to-buy",         external: false },
   { name: "TOKENOMICS",         href: "/#tokenomics",         external: false },
-  { name: "TOKEN DISTRIBUTION", href: "/#token-distribution", external: false },
-  { name: "ROADMAP",            href: "/#roadmap",            external: false },
+  // { name: "TOKEN DISTRIBUTION", href: "/#token-distribution", external: false },
   { name: "BEHIND THE SCENES",  href: "/behind-the-scenes",   external: true  },
+  { name: "ROADMAP",            href: "/#roadmap",            external: false },
   { name: "WARZONE",            href: "/#warzone",            external: false },
-  { name: "ANNOUNCEMENT",       href: "/#announcement",       external: false },
+  // { name: "ANNOUNCEMENT",       href: "/#announcement",       external: false },
 ];
 
 const Navbar = () => {
