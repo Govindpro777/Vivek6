@@ -21,7 +21,7 @@ const HeroSection = () => {
 
         {/* Text + button + social */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
-          <div className="space-y-6 text-center lg:text-left">
+          <div className="space-y-6 text-center lg:text-left mt-12">
             <motion.h1
               className="font-display text-3xl md:text-6xl text-secondary text-shadow-blue leading-tight"
               initial={{ opacity: 0, x: -100 }}
