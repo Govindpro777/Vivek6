@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
-  { name: "GALLERY", href: "#gallery" },
-  // { name: "WHY LIFE MATTER", href: "#why-life-matters" },
-  // { name: "WHITE PAPER", href: "#whitepaper" },
-  { name: "HOW TO BUY", href: "#how-to-buy" },
-  { name: "ROADMAP", href: "#roadmap" },
-  { name: "TOKENOMICS", href: "#tokenomics" },
-  { name: "TOKEN DISTRIBUTION", href: "#token-distribution" },
-  { name: "WARZONE", href: "#warzone" },
-  { name: "ANNOUNCEMENT", href: "#announcement" },
+  { name: "GALLERY",            href: "/#gallery",            external: false },
+  { name: "HOW TO BUY",         href: "/#how-to-buy",         external: false },
+  { name: "TOKENOMICS",         href: "/#tokenomics",         external: false },
+  { name: "TOKEN DISTRIBUTION", href: "/#token-distribution", external: false },
+  { name: "ROADMAP",            href: "/#roadmap",            external: false },
+  { name: "BEHIND THE SCENES",  href: "/behind-the-scenes",   external: true  },
+  { name: "WARZONE",            href: "/#warzone",            external: false },
+  { name: "ANNOUNCEMENT",       href: "/#announcement",       external: false },
 ];
 
 const Navbar = () => {
@@ -26,38 +26,52 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30"
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo with scale animation */}
-        <motion.a
-          href="#"
-          className="flex items-center gap-2"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <motion.img
-            src={logo}
-            alt="$GALLOP"
-            className="h-10 w-auto md:h-12 lg:h-14"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-          />
-        </motion.a>
+        {/* Logo */}
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link to="/" className="flex items-center gap-2">
+            <motion.img
+              src={logo}
+              alt="$GALLOP"
+              className="h-10 w-auto md:h-12 lg:h-14"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+            />
+          </Link>
+        </motion.div>
 
         {/* Desktop nav links */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              className="font-display text-sm md:text-base lg:text-lg text-muted-foreground hover:text-foreground transition-colors"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index, duration: 0.4 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              {link.name}
-            </motion.a>
-          ))}
+        <div className="hidden md:flex items-center gap-4 lg:gap-6">
+          {navLinks.map((link, index) =>
+            link.external ? (
+              <motion.div
+                key={link.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index, duration: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Link
+                  to={link.href}
+                  className="font-display text-sm md:text-base lg:text-lg text-secondary hover:text-foreground transition-colors"
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                className="font-display text-sm md:text-base lg:text-lg text-muted-foreground hover:text-foreground transition-colors"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index, duration: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                {link.name}
+              </motion.a>
+            )
+          )}
         </div>
 
         {/* Desktop CTA */}
@@ -91,16 +105,27 @@ const Navbar = () => {
           className="md:hidden border-t border-border/30 bg-background/95 backdrop-blur-md"
         >
           <div className="container mx-auto px-4 py-3 space-y-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block font-display text-sm text-muted-foreground hover:text-foreground"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setOpen(false)}
+                  className="block font-display text-sm text-secondary hover:text-foreground"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="block font-display text-sm text-muted-foreground hover:text-foreground"
+                >
+                  {link.name}
+                </a>
+              )
+            )}
             <a
               href="#"
               className="mt-2 block w-full text-center px-4 py-2 bg-secondary text-secondary-foreground font-display text-sm rounded-lg"

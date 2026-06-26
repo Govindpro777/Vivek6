@@ -18,8 +18,8 @@
     --primary: 43 96% 56%;
     --primary-foreground: 30 15% 8%;
 
-    --secondary: 200 70% 70%;
-    --secondary-foreground: 30 15% 8%;
+    --secondary: 43 96% 62%;
+    --secondary-foreground: 20 15% 8%;
 
     --muted: 30 15% 20%;
     --muted-foreground: 45 20% 70%;
@@ -40,13 +40,13 @@
     --gold: 43 96% 56%;
     --gold-dark: 43 80% 35%;
     --gold-light: 45 90% 70%;
-    --blue-glow: 200 80% 70%;
+    --blue-glow: 43 96% 62%;
     --orange-accent: 25 95% 55%;
 
     /* Shadows */
     --shadow-gold: 0 0 30px hsl(43 96% 56% / 0.4);
-    --shadow-blue: 0 0 20px hsl(200 80% 70% / 0.5);
-    --text-shadow-blue: 2px 2px 0px hsl(200 80% 50%), 4px 4px 0px hsl(200 80% 30%);
+    --shadow-blue: 0 0 20px hsl(43 96% 56% / 0.5);
+    --text-shadow-blue: 2px 2px 0px hsl(43 80% 35%), 4px 4px 0px hsl(30 60% 20%);
 
     --sidebar-background: 30 15% 8%;
     --sidebar-foreground: 45 30% 95%;
@@ -67,8 +67,8 @@
     --popover-foreground: 45 30% 95%;
     --primary: 43 96% 56%;
     --primary-foreground: 30 15% 8%;
-    --secondary: 200 70% 70%;
-    --secondary-foreground: 30 15% 8%;
+    --secondary: 43 96% 62%;
+    --secondary-foreground: 20 15% 8%;
     --muted: 30 15% 20%;
     --muted-foreground: 45 20% 70%;
     --accent: 43 80% 45%;
@@ -110,7 +110,7 @@
   }
 
   .text-shadow-blue {
-    text-shadow: 2px 2px 0px hsl(200 80% 50%), 4px 4px 0px hsl(200 80% 30%);
+    text-shadow: 2px 2px 0px hsl(43 80% 35%), 4px 4px 0px hsl(30 60% 20%);
   }
 
   .text-shadow-gold {
@@ -122,7 +122,7 @@
   }
 
   .glow-blue {
-    box-shadow: 0 0 20px hsl(200 80% 70% / 0.5), 0 0 40px hsl(200 80% 70% / 0.3);
+    box-shadow: 0 0 20px hsl(43 96% 56% / 0.6), 0 0 40px hsl(43 96% 56% / 0.3);
   }
 
   .glass-card {

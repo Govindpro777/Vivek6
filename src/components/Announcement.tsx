@@ -64,14 +64,14 @@ const Announcement = () => {
 
         {/* Video Container */}
         <motion.div
-          className="max-w-4xl mx-auto"
+          className="max-w-3xl mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="glass-card rounded-2xl overflow-hidden glow-gold">
-            <div className="relative aspect-video w-full bg-gradient-to-br from-pink-500/20 via-cyan-500/20 to-green-500/20 flex items-center justify-center">
+            <div className="relative aspect-square w-full bg-gradient-to-br from-pink-500/20 via-cyan-500/20 to-green-500/20 flex items-center justify-center">
               <video
                 ref={videoRef}
                 className="w-full h-full object-cover"
