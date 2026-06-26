@@ -105,7 +105,7 @@ const HeroSection = () => {
           ))}
         </motion.div> */}
 
-        <motion.div
+        {/* <motion.div
           className="flex justify-center w-full m-8 mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ const HeroSection = () => {
           >
             COMING SOON
           </span>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

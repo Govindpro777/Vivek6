@@ -65,7 +65,7 @@ const Index = () => {
         playsInline
         className="fixed inset-0 block sm:hidden w-full h-full object-cover -z-10"
       />
-      <div className="fixed inset-0 bg-background/60 -z-10" />
+      <div className="fixed inset-0 bg-background/30 -z-10" />
 
       <audio ref={audioRef} src={Audio} loop />
 
