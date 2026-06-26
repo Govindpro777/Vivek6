@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Send, Music2, Instagram } from "lucide-react";
+import { Send, Instagram } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import eagalImg from "@/assets/eagal.png";
 import xImg from "@/assets/x.png";
@@ -8,15 +8,15 @@ import telegramImg from "@/assets/telegram.png";
 import capsuleImg from "@/assets/capsule.png";
 
 const socialLinks = [
-  { icon: FaXTwitter, href: "#", label: "X" },
-  { icon: Send,       href: "#", label: "Telegram" },
-  { icon: Music2,     href: "#", label: "TikTok" },
-  { icon: Instagram,  href: "#", label: "Instagram" },
+  { icon: FaXTwitter,  img: null,        href: "#", label: "X" },
+  { icon: Send,        img: null,        href: "#", label: "Telegram" },
+  { icon: null,        img: capsuleImg,  href: "#", label: "Capsule" },
+  { icon: Instagram,   img: null,        href: "#", label: "Instagram" },
 ];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-24 pb-10 sm:pb-16 lg:pt-28">
+    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-24 pb-10 sm:pb-16 lg:pt-28 ">
       <div className="container mx-auto px-4 relative z-10 flex flex-col gap-10">
 
         {/* Text + button + social */}
@@ -76,7 +76,10 @@ const HeroSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7 + index * 0.1 }}
                 >
-                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  {social.img
+                    ? <img src={social.img} alt={social.label} className="w-5 h-5 object-contain" />
+                    : social.icon && <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  }
                 </motion.a>
               ))}
             </motion.div>
@@ -101,6 +104,29 @@ const HeroSection = () => {
             />
           ))}
         </motion.div> */}
+
+        <motion.div
+          className="flex justify-center w-full m-8 mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
+        >
+          <span
+            className="font-display text-3xl sm:text-4xl md:text-5xl tracking-[0.25em]"
+            style={{
+              background: "linear-gradient(90deg, #ffffff, #c0c0c0, #ffffff)",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              textShadow: "none",
+              filter: "drop-shadow(0 0 12px rgba(255,255,255,0.4))",
+              animation: "shimmer 3s linear infinite",
+            }}
+          >
+            COMING SOON
+          </span>
+        </motion.div>
 
       </div>
     </section>

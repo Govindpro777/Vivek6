@@ -48,10 +48,11 @@ const LiveChart = () => {
 
           <div className="aspect-[4/5] xs:aspect-[3/4] sm:aspect-video w-full bg-card">
             <iframe
-              src="https://dexscreener.com/solana/ccybxbmhr2o9vyz2wmjcrvi59wh42xkxf6qrzchbhpn5?embed=1&theme=dark&trades=0&info=0"
+              src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_sol&symbol=SOLUSD&interval=60&hidesidetoolbar=0&hidetoptoolbar=0&symboledit=0&saveimage=0&theme=dark&style=1&timezone=Etc%2FUTC&studies=%5B%5D&locale=en"
               className="w-full h-full border-0"
-              title="SOL Chart - DEX Screener"
-              allow="clipboard-write"
+              title="SOL/USD Live Chart"
+              allowTransparency={true}
+              style={{ overflow: "hidden" }}
             />
           </div>
 
