@@ -4,11 +4,11 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 const tokenData = [
   { name: "$GALLOP Tokens", percentage: 77, color: "#4A9BD9", description: "Available during the fair launch" },
   { name: "Burned", percentage: 7, color: "#4CAF50", description: "Tokens removed from circulation forever" },
-  { name: "Humane Society / Cat Shelters", percentage: 5, color: "#FF9800", description: "Donations to help our furry friends" },
+  { name: "Humane Society", percentage: 5, color: "#FF9800", description: "Donations to help our furry friends" },
   { name: "Dev Team", percentage: 4, color: "#E74C3C", description: "Vested to ensure long-term commitment" },
   { name: "Marketing", percentage: 3, color: "#9E9E9E", description: "To spread the word of $GALLOP" },
   { name: "Airdrops", percentage: 2, color: "#8BC34A", description: "Rewards for the community" },
-  { name: "$GALLOP The Cat", percentage: 1, color: "#FFC107", description: "For food, treats, and litter" },
+  // { name: "$GALLOP The Cat", percentage: 1, color: "#FFC107", description: "For food, treats, and litter" },
 ];
 
 const Tokenomics = () => {

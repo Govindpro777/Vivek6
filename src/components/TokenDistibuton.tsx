@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const flokipumpTokenData = [
-  {
-    name: "Presale",
-    percentage: 32,
-    color: "#FACC15",
-    description: "1,600,000,000 $GALLOP – To raise funds for development and marketing.",
-  },
+  // {
+  //   name: "Presale",
+  //   percentage: 32,
+  //   color: "#FACC15",
+  //   description: "1,600,000,000 $GALLOP – To raise funds for development and marketing.",
+  // },
   {
     name: "DEX Liquidity (Raydium)",
     percentage: 20,

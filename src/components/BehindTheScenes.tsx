@@ -6,6 +6,7 @@ import eagalImg from "@/assets/eagal.png";
 import moneyImg from "@/assets/money.png";
 import community1Img from "@/assets/community1.jpg";
 import community2Img from "@/assets/community2.jpg";
+import behindScene1Img from "@/assets/behind_the_scene1.jpeg";
 
 const weeklyEvents = [
   {
@@ -119,6 +120,57 @@ const BehindTheScenes = () => {
           </motion.div>
         </div>
 
+        {/* Meme Contest Featured Section */}
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="font-display text-3xl md:text-4xl text-secondary text-shadow-blue mb-2">
+            MEME CONTEST
+          </h3>
+          <p className="font-body text-muted-foreground">
+            Show off your best $GALLOP memes and win massive rewards.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="max-w-xl mx-auto mb-20"
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          <div className="relative p-[2px] rounded-3xl bg-gradient-to-br from-secondary via-primary/60 to-secondary/30">
+            <div className="rounded-3xl overflow-hidden bg-card/80 backdrop-blur-md">
+              <img
+                src={behindScene1Img}
+                alt="$GALLOP Meme Contest"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+
+          <motion.div
+            className="text-center mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <motion.a
+              href="#"
+              className="inline-block px-8 py-3 bg-secondary text-secondary-foreground font-display text-lg rounded-lg glow-blue hover:bg-secondary/90 transition-all"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 40px hsl(43 96% 56% / 0.8)" }}
+              whileTap={{ scale: 0.95 }}
+            >
+              ENTER THE CONTEST
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
         {/* Weekly events grid */}
         <motion.div
           className="text-center mb-10"
@@ -174,7 +226,7 @@ const BehindTheScenes = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-20">
           {[
             { src: community1Img, label: "Community 1" },
             { src: community2Img, label: "Community 2" },
