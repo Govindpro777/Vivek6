@@ -8,8 +8,8 @@ import telegramImg from "@/assets/telegram.png";
 import capsuleImg from "@/assets/capsule.png";
 
 const socialLinks = [
-  { icon: FaXTwitter,  img: null,        href: "#", label: "X" },
-  { icon: Send,        img: null,        href: "#", label: "Telegram" },
+  { icon: FaXTwitter,  img: null,        href: "https://x.com/galloponsol?s=11", label: "X" },
+  { icon: Send,        img: null,        href: "https://t.me/GallopMainChat",    label: "Telegram" },
   { icon: null,        img: capsuleImg,  href: "#", label: "Capsule" },
   { icon: Instagram,   img: null,        href: "#", label: "Instagram" },
 ];
